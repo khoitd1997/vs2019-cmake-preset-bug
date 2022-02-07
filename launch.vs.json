@@ -2,33 +2,34 @@
     "version": "0.2.1",
     "defaults": {},
     "configurations": [
-        {
-            "type": "cppdbg",
-            "name": "gdbserver", // a friendly name for the debug configuration 
-            "project": "CMakeLists.txt",
-            "projectTarget": "test.elf", // target to invoke, must match the name of the target that exists in the debug drop-down menu
-            "cwd": "/", // some local directory 
-            "program": "C:/Users/khoid/vs2019-cmake-preset-bug/build/default/test.elf", // full Windows path to the program
-            "MIMode": "gdb",
-            "externalConsole": true,
-            "remoteMachineName": "my-ultra96-zynqmp", // remote system to deploy to, you can force IntelliSense to prompt you with a list of existing connections with ctrl + space
-            "miDebuggerPath": "C:/Xilinx/Vitis/2020.1/gnu/aarch64/nt/aarch64-linux/bin/aarch64-linux-gnu-gdb.exe", // full Windows path to local instance of gdb
-            "setupCommands": [
-                {
-                    "text": "set sysroot ."
-                },
-                {
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "pipeTransport": {
-                "disable": true
-            },
-            "showDisplayString": true,
-            "miDebuggerServerAddress": "my-ultra96-zynqmp:1234", // host name of the remote deploy system and port gdbserver will listen on
-            "remotePrelaunchCommand": "gdbserver :1234 /test.elf >& /dev/null", // command to execute on the remote system before gdb is launched including the full path to the output on your remote debug system, >& /dev/null is required
-            "remotePrelaunchWait": "2000" // property to specify a wait period after running the prelaunchCommand and before launching the debugger in ms
-        }
+      {
+        "type": "cppdbg",
+        "name": "gdbserver", // a friendly name for the debug configuration 
+        "project": "CMakeLists.txt",
+        "projectTarget": "test.elf", // target to invoke, must match the name of the target that exists in the debug drop-down menu
+        "cwd": "/", // some local directory 
+        "deployDirectory": "/",
+        "program": "C:/Users/khoid/vs2019-cmake-preset-bug/build/default/test.elf", // full Windows path to the program
+        "MIMode": "gdb",
+        "externalConsole": true,
+        "remoteMachineName": "192.168.1.100", // remote system to deploy to, you can force IntelliSense to prompt you with a list of existing connections with ctrl + space
+        "miDebuggerPath": "C:/Xilinx/Vitis/2020.1/gnu/aarch64/nt/aarch64-linux/bin/aarch64-linux-gnu-gdb.exe", // full Windows path to local instance of gdb
+        "setupCommands": [
+          {
+            "text": "set sysroot ."
+          },
+          {
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ],
+        "pipeTransport": {
+          "disable": true
+        },
+        "showDisplayString": true,
+        "miDebuggerServerAddress": "192.168.1.100:1234", // host name of the remote deploy system and port gdbserver will listen on
+        "remotePrelaunchCommand": "gdbserver :1234 /test.elf >& /dev/null", // command to execute on the remote system before gdb is launched including the full path to the output on your remote debug system, >& /dev/null is required
+        "remotePrelaunchWait": "2000" // property to specify a wait period after running the prelaunchCommand and before launching the debugger in ms
+      }
     ]
 }
