@@ -13,7 +13,9 @@
         "MIMode": "gdb",
         "externalConsole": true,
         "remoteMachineName": "192.168.1.100", // remote system to deploy to, you can force IntelliSense to prompt you with a list of existing connections with ctrl + space
-        "miDebuggerPath": "C:/Xilinx/Vitis/2020.1/gnu/aarch64/nt/aarch64-linux/bin/aarch64-linux-gnu-gdb.exe", // full Windows path to local instance of gdb
+        // "miDebuggerPath": "C:/Xilinx/Vitis/2020.1/gnu/aarch64/nt/aarch64-linux/bin/aarch64-linux-gnu-gdb.exe", // full Windows path to local instance of gdb
+        "miDebuggerPath": "C:/Users/khoid/Downloads/gcc-arm-10.3-2021.07-mingw-w64-i686-aarch64-none-linux-gnu/bin/aarch64-none-linux-gnu-gdb.exe", // full Windows path to local instance of gdb
+        "miDebuggerArg": "",
         "setupCommands": [
           {
             "text": "set sysroot ."
